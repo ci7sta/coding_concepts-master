@@ -36,7 +36,7 @@ class DirectionControls extends Component {
     }
 
     handleInput() {
-        var input = this.refs.commandInput.value.toLowerCase();
+        var input = this.refs.commandInput.value.toLowerCase().replace(/ /g,'');
 
         if (input === "forward();") {
             this.forwardClick();
@@ -47,7 +47,7 @@ class DirectionControls extends Component {
         } else if (input === "right();") {
             this.rightClick();
         } else {
-            this.refs.commandInput.value = "Invalid Command!";
+            this.refs.commandInput.value = input + " is not correct.";
         }
     }
 

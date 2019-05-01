@@ -26,14 +26,20 @@ class Character extends Component{
 
     moveBack(){
         this.state.position.y--;
+        this.state.positionOffset.top -= 51;
+        this.setState(this.state);
     }
 
     moveLeft(){
         this.state.position.x--;
+        this.state.positionOffset.left -= 51;
+        this.setState(this.state);
     }
 
     moveRight(){
         this.state.position.x++;
+        this.state.positionOffset.left += 51;
+        this.setState(this.state);
     }
 
 

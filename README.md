@@ -2,6 +2,17 @@
 This application is both a client application and a server. The server uses express (https://expressjs.com/) and is configured to listen on port 3001. The client side application is built on the React framework (https://reactjs.org/). Installing react and creating a project also bundles a development server which returns the application on port 3000.
 
 One of the reasons we have both a client and a server application is where we want this application to go in future and it's used as a teaching mechanism. We chose to use NodeJS because the barriers to development are very low and Fraser wanted to try out TypeScript.
+
+## Implemented Stories (Callum)
+Epic 1 - Collect the Colour game  
+1, 2, 3, 4, 5, 6, 7, 8, 10, 12  
+
+Epic 2 - Introduce a movement language  
+1, 2, 3, 4  
+
+Epic 3 - Collect the Colour game enhancements  
+1
+
 ## Development Requirements
 
 * Node (7.6 or newer) and npm (4.1.2 or newer)

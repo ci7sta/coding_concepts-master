@@ -13,7 +13,7 @@ class Character extends Component {
             },
             positionOffset: {
                 top: -406,
-                left: -253
+                left: -220
             },
             collected: 0,
             moves: []
@@ -27,7 +27,7 @@ class Character extends Component {
         this.state.position.x = 1;
         this.state.position.y = 1;
         this.state.positionOffset.top = -406;
-        this.state.positionOffset.left = -253;
+        this.state.positionOffset.left = -220;
         this.setState(this.state);
     }
 

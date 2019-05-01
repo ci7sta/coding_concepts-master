@@ -78,7 +78,7 @@ export class ConfigController {
                 "H4": secondaryColour
             },
             "primaryColour": primaryColour,
-            "rules": `In the fewest moves possible collect all of the ${primaryColour} squares`
+            "rules": `In the fewest moves possible collect all of the ${primaryColour} dots`
 
         };        
     }

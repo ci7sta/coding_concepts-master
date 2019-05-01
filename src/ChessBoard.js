@@ -9,6 +9,7 @@ class ChessBoard extends Component {
         this.width = 8;
         this.height = 8;
         this.collected = 0;
+        this.moves = 0;
     }
 
     render() {
@@ -16,7 +17,7 @@ class ChessBoard extends Component {
             <div>
                 <TableComponent data={this.generateTable()} id={this.props.id} ref={this.tableRef}/>
                 <Character ref={this.props.characterRef}/>
-                <p>{this.props.config.rules}</p>
+                <p ref="objective">{this.props.config.rules}</p>
             </div>
         );
     }
@@ -37,10 +38,11 @@ class ChessBoard extends Component {
             }
         }
 
+        this.moves++;
+
         if (this.collected === 6) {
-            alert("Win!");
+            alert("Win! It took you " + this.moves + " moves to get all the colours. Press \"New game\" to play again");
         }
-        this.render();
     }
 
     directionClick(e) {

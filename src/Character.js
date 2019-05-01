@@ -15,13 +15,14 @@ class Character extends Component {
                 top: -406,
                 left: -253
             },
-            collected: [],
+            collected: 0,
             moves: []
         };
     }
 
     resetPosition() {
         alert("You went off the board. Resetting position...");
+        this.state.collected = 0;
         this.state.position.x = 1;
         this.state.position.y = 1;
         this.state.positionOffset.top = -406;

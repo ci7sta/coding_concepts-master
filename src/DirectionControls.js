@@ -43,6 +43,11 @@ class DirectionControls extends Component {
             var number = parseInt(commands[commandIndex].replace(/[^\d.]/g, ''), 10);
             var text = commands[commandIndex].replace(/[0-9]/g, '');
 
+            if(!isNaN(number) && number >= 8) {
+                alert("Number of spaces to move is too high!");
+                return;
+            }
+
             if (text === "forward()") {
 
                 if (isNaN(number)) {

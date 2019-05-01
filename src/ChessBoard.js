@@ -36,7 +36,6 @@ class ChessBoard extends Component {
 
     checkPosForColour() {
 
-
         var tableData = this.generateTable();
         var xPos = this.props.characterRef.current.state.position.x;
         var yPos = this.props.characterRef.current.state.position.y;
@@ -47,13 +46,13 @@ class ChessBoard extends Component {
             if (tableData.rows[yPos - 1][xPos].props.style.color === this.props.config.primaryColour) {
                 debugger;
                 tableData.rows[yPos - 1][xPos] = "";
-                this.collected++;
+                this.props.characterRef.current.state.collected++;
             }
         }
 
         this.moves++;
 
-        if (this.collected === 6) {
+        if (this.props.characterRef.current.state.collected === 6) {
             alert("Win! It took you " + this.moves + " moves to get all the colours. Press \"New game\" to play again");
         }
         this.render();

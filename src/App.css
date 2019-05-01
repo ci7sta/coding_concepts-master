@@ -1,0 +1,96 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header, .App-main {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.columnLayout{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.rowLayout{
+  display: flex;
+  flex-direction: column;
+  text-align:center;
+}
+
+#chessBoard td{
+  width: 50px;
+  height: 50px;
+  border: 1px solid white;
+  padding:0;
+}
+
+#chessBoard th{
+  width: 50px;
+  height: 50px;
+  padding:0;
+}
+
+#chessBoard td:first-child{ 
+  width: 50px;
+  height: 50px;
+  border: none;
+}
+
+.arrow{
+  width: 100px;
+  height:100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.arrow:hover{
+  filter: invert(.5);
+  cursor: pointer;
+}
+
+img.arrow:hover path{
+  fill:green;
+}
+
+.rightArrow{
+  transform: rotate(180deg);
+}
+
+.backArrow{
+  transform: rotate(90deg);
+}
+
+.forwardArrow{
+  transform: rotate(270deg);
+}
+
+#chessBoard{
+  border-collapse: collapse;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

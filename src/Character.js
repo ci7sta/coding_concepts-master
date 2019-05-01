@@ -12,7 +12,7 @@ class Character extends Component{
               y: 1
           },
           positionOffset:{
-              top: -459,
+              top: -420,
               left: -153
           }
         };

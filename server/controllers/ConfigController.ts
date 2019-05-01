@@ -82,7 +82,7 @@ export class ConfigController {
     }
 
     private randomNumber(min: number, max: number): number {
-        return Math.floor((Math.random() * max) + min);
+        return Math.floor((Math.random() * (max - min)) + min);
     }
 
     private complexGameLayout(): object {

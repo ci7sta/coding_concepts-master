@@ -1,24 +1,25 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import character from './images/character.svg';
-import { relative } from 'path';
+import {relative} from 'path';
 
-class Character extends Component{
+class Character extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-          position: {
-              x: 1,
-              y: 1
-          },
-          positionOffset:{
-              top: -406,
-              left: -153
-          }
+            position: {
+                x: 1,
+                y: 1
+            },
+            positionOffset: {
+                top: -406,
+                left: -253
+            }
+
         };
     }
-    
-    moveForward(){
+
+    moveForward() {
 
         if (this.state.position.y !== 8) {
             this.state.position.y++;
@@ -27,7 +28,7 @@ class Character extends Component{
         }
     }
 
-    moveBack(){
+    moveBack() {
         if (this.state.position.y !== 1) {
             this.state.position.y--;
             this.state.positionOffset.top -= 51;
@@ -35,7 +36,7 @@ class Character extends Component{
         }
     }
 
-    moveLeft(){
+    moveLeft() {
         if (this.state.position.x !== 1) {
             this.state.position.x--;
             this.state.positionOffset.left -= 51;
@@ -52,8 +53,7 @@ class Character extends Component{
     }
 
 
-
-    render(){
+    render() {
         var style = {
             margin: "0",
             position: "relative",
@@ -61,8 +61,8 @@ class Character extends Component{
             top: this.state.positionOffset.top.toString().concat("px")
         };
 
-        return(
-            <img src={character} alt="character" width="50px" id="character" style={style} />
+        return (
+            <img src={character} alt="character" width="50px" id="character" style={style}/>
         );
     }
 }

@@ -15,6 +15,7 @@ class ChessBoard extends Component {
           <div>
             <TableComponent data = {this.generateTable()} id={this.props.id} ref={this.tableRef} />
             <Character ref={this.props.characterRef} />
+            <p>{this.props.config.rules}</p>
           </div>
         );
     }
@@ -46,6 +47,10 @@ class ChessBoard extends Component {
       });
   
       return tableData;
+    }
+
+    setObjective() {
+
     }
 
     generateHeaders() {

@@ -42,18 +42,23 @@ class ChessBoard extends Component {
 
         console.log(tableData.rows[xPos - 1][yPos]);
 
+        // If the table has a colour and that colour matches our position, and the colour is the target colour,
+        // and we haven't collect it before, add one to our collected count
         if (tableData.rows[yPos - 1][xPos] !== "" && tableData.rows[yPos - 1][xPos].props.style.color !== undefined) {
             var alreadyCollected = this.collected.indexOf(xPos + "" + yPos);
             if (tableData.rows[yPos - 1][xPos].props.style.color === this.props.config.primaryColour && alreadyCollected < 0) {
                 debugger;
                 tableData.rows[yPos - 1][xPos] = "";
                 this.props.characterRef.current.state.collected++;
+
+                // Add the collected piece to memory
                 this.collected.push(xPos + "" + yPos);
             }
         }
 
         this.moves++;
 
+        // We got all the target colours
         if (this.props.characterRef.current.state.collected === 6) {
             alert("Win! It took you " + this.moves + " moves to get all the colours. Press \"New game\" to play again");
         }
@@ -65,6 +70,8 @@ class ChessBoard extends Component {
     }
 
     generateTable() {
+
+        // This table had one too many rows (bug 1)
         var tableData = {
             columns: this.generateHeaders(),
             rows: [

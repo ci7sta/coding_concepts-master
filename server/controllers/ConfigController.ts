@@ -84,6 +84,7 @@ export class ConfigController {
     }
 
     private randomNumber(min: number, max: number): number {
+        // This random function was incorrect (max was not being included in the range
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1)) + min;

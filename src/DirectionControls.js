@@ -37,9 +37,13 @@ class DirectionControls extends Component {
 
     handleInput() {
         var input = this.refs.commandInput.value.toLowerCase().replace(/ /g, '');
+
+        // Separate commands into array of commands using ; delimiter
         var commands = input.split(";");
 
         for (var commandIndex = 0; commandIndex < commands.length; commandIndex++) {
+
+            // get the text and the number (if there is one)
             var number = parseInt(commands[commandIndex].replace(/[^\d.]/g, ''), 10);
             var text = commands[commandIndex].replace(/[0-9]/g, '');
 
@@ -47,6 +51,9 @@ class DirectionControls extends Component {
                 alert("Number of spaces to move is too high!");
                 return;
             }
+
+            // Match the commmand to the function which moves the character in the chosen direction
+            // execute multiple times if necessary
 
             if (text === "forward()") {
 

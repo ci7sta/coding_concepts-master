@@ -21,6 +21,7 @@ class Character extends Component {
     }
 
     resetPosition() {
+        // Reset the position and collected colours
         alert("You went off the board. Resetting position...");
         this.state.collected = 0;
         this.state.position.x = 1;

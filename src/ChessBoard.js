@@ -8,7 +8,7 @@ class ChessBoard extends Component {
         super(props);
         this.width = 8;
         this.height = 8;
-        this.collected = 0;
+        this.collected = [];
         this.moves = 0;
         this.tableData = undefined;
     }
@@ -43,10 +43,12 @@ class ChessBoard extends Component {
         console.log(tableData.rows[xPos - 1][yPos]);
 
         if (tableData.rows[yPos - 1][xPos] !== "" && tableData.rows[yPos - 1][xPos].props.style.color !== undefined) {
-            if (tableData.rows[yPos - 1][xPos].props.style.color === this.props.config.primaryColour) {
+            var alreadyCollected = this.collected.indexOf(xPos + "" + yPos);
+            if (tableData.rows[yPos - 1][xPos].props.style.color === this.props.config.primaryColour && alreadyCollected < 0) {
                 debugger;
                 tableData.rows[yPos - 1][xPos] = "";
                 this.props.characterRef.current.state.collected++;
+                this.collected.push(xPos + "" + yPos);
             }
         }
 

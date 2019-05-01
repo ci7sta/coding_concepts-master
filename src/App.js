@@ -53,7 +53,7 @@ class App extends Component {
           <div><button onClick={(e) => this.refreshLayout(e)}>New Game</button></div>
           <div class="columnLayout">
             <ChessBoard id="chessBoard" config={this.state.boardConfig} ref={this.boardRef} characterRef={this.characterRef} />
-            <DirectionControls characterRef={this.characterRef} />
+            <DirectionControls characterRef={this.characterRef} boardRef={this.boardRef}/>
           </div>
 
             <div className="columnLayout">

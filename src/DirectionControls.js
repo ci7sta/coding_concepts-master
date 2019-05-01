@@ -6,29 +6,33 @@ class DirectionControls extends Component{
     forwardClick(e){
       //instance of Character.js injected as property during instantiation
       var character = this.props.characterRef.current;
+      var board = this.props.boardRef.current;
       character.moveForward();
-      debugger;
+      board.checkPosForColour();
     }
 
     backwardClick(e){
         //instance of Character.js injected as property during instantiation
         var character = this.props.characterRef.current;
+        var board = this.props.boardRef.current;
         character.moveBack();
-        debugger;
+        board.checkPosForColour();
     }
 
     leftClick(e){
         //instance of Character.js injected as property during instantiation
         var character = this.props.characterRef.current;
+        var board = this.props.boardRef.current;
         character.moveLeft();
-        debugger;
+        board.checkPosForColour();
     }
 
     rightClick(e){
         //instance of Character.js injected as property during instantiation
         var character = this.props.characterRef.current;
+        var board = this.props.boardRef.current;
         character.moveRight();
-        debugger;
+        board.checkPosForColour();
     }
 
     render(){

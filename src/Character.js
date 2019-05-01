@@ -14,8 +14,8 @@ class Character extends Component {
             positionOffset: {
                 top: -406,
                 left: -253
-            }
-
+            },
+            collected: []
         };
     }
 

@@ -10,20 +10,32 @@ class ChessBoard extends Component {
         this.height = 8;
         this.collected = 0;
         this.moves = 0;
+        this.tableData = undefined;
     }
 
     render() {
-        return (
-            <div>
-                <TableComponent data={this.generateTable()} id={this.props.id} ref={this.tableRef}/>
-                <Character ref={this.props.characterRef}/>
-                <p ref="objective">{this.props.config.rules}</p>
-            </div>
-        );
+
+        if (this.tableData === undefined) {
+            return (
+                <div>
+                    <TableComponent data={this.generateTable()} id={this.props.id} ref={this.tableRef}/>
+                    <Character ref={this.props.characterRef}/>
+                    <p ref="objective">{this.props.config.rules}</p>
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    <TableComponent data={this.tableData} id={this.props.id} ref={this.tableRef}/>
+                    <Character ref={this.props.characterRef}/>
+                    <p ref="objective">{this.props.config.rules}</p>
+                </div>
+            );
+        }
     }
 
     checkPosForColour() {
-        debugger;
+
 
         var tableData = this.generateTable();
         var xPos = this.props.characterRef.current.state.position.x;
@@ -33,7 +45,8 @@ class ChessBoard extends Component {
 
         if (tableData.rows[yPos - 1][xPos] !== "" && tableData.rows[yPos - 1][xPos].props.style.color !== undefined) {
             if (tableData.rows[yPos - 1][xPos].props.style.color === this.props.config.primaryColour) {
-                tableData.rows[yPos - 1][xPos] = <span></span>;
+                debugger;
+                tableData.rows[yPos - 1][xPos] = "";
                 this.collected++;
             }
         }
@@ -43,6 +56,7 @@ class ChessBoard extends Component {
         if (this.collected === 6) {
             alert("Win! It took you " + this.moves + " moves to get all the colours. Press \"New game\" to play again");
         }
+        this.render();
     }
 
     directionClick(e) {

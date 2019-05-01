@@ -12,34 +12,43 @@ class Character extends Component{
               y: 1
           },
           positionOffset:{
-              top: -420,
+              top: -406,
               left: -153
           }
         };
     }
     
     moveForward(){
-        this.state.position.y++;
-        this.state.positionOffset.top += 51;
-        this.setState(this.state);
+
+        if (this.state.position.y !== 8) {
+            this.state.position.y++;
+            this.state.positionOffset.top += 51;
+            this.setState(this.state);
+        }
     }
 
     moveBack(){
-        this.state.position.y--;
-        this.state.positionOffset.top -= 51;
-        this.setState(this.state);
+        if (this.state.position.y !== 1) {
+            this.state.position.y--;
+            this.state.positionOffset.top -= 51;
+            this.setState(this.state);
+        }
     }
 
     moveLeft(){
-        this.state.position.x--;
-        this.state.positionOffset.left -= 51;
-        this.setState(this.state);
+        if (this.state.position.x !== 1) {
+            this.state.position.x--;
+            this.state.positionOffset.left -= 51;
+            this.setState(this.state);
+        }
     }
 
-    moveRight(){
-        this.state.position.x++;
-        this.state.positionOffset.left += 51;
-        this.setState(this.state);
+    moveRight() {
+        if (this.state.position.x !== 8) {
+            this.state.position.x++;
+            this.state.positionOffset.left += 51;
+            this.setState(this.state);
+        }
     }
 
 

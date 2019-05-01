@@ -37,10 +37,7 @@ class DirectionControls extends Component {
 
     handleInput() {
         var input = this.refs.commandInput.value.toLowerCase().replace(/ /g, '');
-
-
         var commands = input.split(";");
-        debugger;
 
         for (var commandIndex = 0; commandIndex < commands.length; commandIndex++) {
             var number = parseInt(commands[commandIndex].replace(/[^\d.]/g, ''), 10);
@@ -78,7 +75,9 @@ class DirectionControls extends Component {
             } else if (text === "") {
                 return;
             } else {
-                this.refs.commandInput.value = input + " is not correct.";
+                alert(input + " is not correct syntax.");
+                this.refs.commandInput.value = "";
+                return;
             }
         }
     }

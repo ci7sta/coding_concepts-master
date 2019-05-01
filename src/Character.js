@@ -15,8 +15,18 @@ class Character extends Component {
                 top: -406,
                 left: -253
             },
-            collected: []
+            collected: [],
+            moves: []
         };
+    }
+
+    resetPosition() {
+        alert("You went off the board. Resetting position...");
+        this.state.position.x = 1;
+        this.state.position.y = 1;
+        this.state.positionOffset.top = -406;
+        this.state.positionOffset.left = -253;
+        this.setState(this.state);
     }
 
     moveForward() {
@@ -25,6 +35,8 @@ class Character extends Component {
             this.state.position.y++;
             this.state.positionOffset.top += 51;
             this.setState(this.state);
+        } else {
+            this.resetPosition();
         }
     }
 
@@ -33,6 +45,8 @@ class Character extends Component {
             this.state.position.y--;
             this.state.positionOffset.top -= 51;
             this.setState(this.state);
+        } else {
+            this.resetPosition();
         }
     }
 
@@ -41,6 +55,8 @@ class Character extends Component {
             this.state.position.x--;
             this.state.positionOffset.left -= 51;
             this.setState(this.state);
+        } else {
+            this.resetPosition();
         }
     }
 
@@ -49,6 +65,8 @@ class Character extends Component {
             this.state.position.x++;
             this.state.positionOffset.left += 51;
             this.setState(this.state);
+        } else {
+            this.resetPosition();
         }
     }
 

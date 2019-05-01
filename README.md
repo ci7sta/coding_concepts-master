@@ -5,10 +5,10 @@ One of the reasons we have both a client and a server application is where we wa
 
 ## Implemented Stories (Callum)
 Epic 1 - Collect the Colour game  
-1, 2, 3, 4, 5, 6, 7, 8, 10, 12  
+1, 2, 3, 4, 5, 6, 7, 8, 10 (sort of), 12  
 
 Epic 2 - Introduce a movement language  
-1, 2, 3, 4  
+1, 2, 3, 4 (sort of) 
 
 Epic 3 - Collect the Colour game enhancements  
 1

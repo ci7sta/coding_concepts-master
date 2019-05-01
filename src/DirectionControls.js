@@ -10,6 +10,27 @@ class DirectionControls extends Component{
       debugger;
     }
 
+    backwardClick(e){
+        //instance of Character.js injected as property during instantiation
+        var character = this.props.characterRef.current;
+        character.moveForward();
+        debugger;
+    }
+
+    leftClick(e){
+        //instance of Character.js injected as property during instantiation
+        var character = this.props.characterRef.current;
+        character.moveForward();
+        debugger;
+    }
+
+    rightClick(e){
+        //instance of Character.js injected as property during instantiation
+        var character = this.props.characterRef.current;
+        character.moveForward();
+        debugger;
+    }
+
     render(){
         return(
             <div id="directionControls" class="columnLayout">

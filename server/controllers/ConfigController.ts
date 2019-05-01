@@ -43,12 +43,12 @@ export class ConfigController {
         const primaryIndex = this.randomNumber(0, coloursMaxIndex);
         let secondaryIndex = 0;
         
-        while (secondaryIndex == primaryIndex) {
+        while (secondaryIndex === primaryIndex) {
             secondaryIndex = this.randomNumber(0, coloursMaxIndex);
         }
         
         let tertiaryIndex = 0;
-        while (tertiaryIndex == primaryIndex || tertiaryIndex == secondaryIndex) {
+        while (tertiaryIndex === primaryIndex || tertiaryIndex === secondaryIndex) {
             tertiaryIndex++;
         }
 
@@ -82,7 +82,9 @@ export class ConfigController {
     }
 
     private randomNumber(min: number, max: number): number {
-        return Math.floor((Math.random() * (max - min)) + min);
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     private complexGameLayout(): object {
